@@ -28,3 +28,4 @@ jobs:
       working-directory: oxidize-json
     - name: Run tests
       run: cargo test --verbose
+      working-directory: oxidize-json
