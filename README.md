@@ -1,4 +1,4 @@
-# Oxidize
+# Oxidize JSON
 
 How Would It Work?
 Extract Schema from Example JSONs
