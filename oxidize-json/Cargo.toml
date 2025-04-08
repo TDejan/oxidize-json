@@ -1,6 +1,10 @@
 [workspace.lints.rust]
 unsafe_code = "forbid"
 
+[[bin]]
+name = "oxidize-json"
+path = "crates/services/web/src/main.rs"
+
 [workspace]
 resolver = "2"
 members = [
