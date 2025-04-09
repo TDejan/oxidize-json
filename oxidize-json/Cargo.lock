@@ -3,5 +3,25 @@
 version = 3
 
 [[package]]
+name = "auth"
+version = "0.1.0"
+
+[[package]]
+name = "cli"
+version = "0.1.0"
+
+[[package]]
+name = "core"
+version = "0.1.0"
+
+[[package]]
 name = "oxidize-json"
+version = "0.1.0"
+
+[[package]]
+name = "tools"
+version = "0.1.0"
+
+[[package]]
+name = "web"
 version = "0.1.0"

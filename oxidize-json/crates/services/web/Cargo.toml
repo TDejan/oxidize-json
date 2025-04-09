@@ -1,0 +1,11 @@
+[package]
+name = "web"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Add your dependencies here
+
+[[bin]]
+name = "web"
+path = "src/main.rs"
