@@ -18,3 +18,19 @@ Only have what's needed for that crate
 If core dependens on utils, then utils can't depend on core.
 Only one dependency flow
 
+Benefits
+1. Separation of concerns
+Each lib crate can encapsulate a specific domain or set of functionality (auth, core, etc.), making your codebase easier to reason about, maintain, and test.
+
+2. Shared dependencies and faster builds
+By using a single Cargo.lock and workspace-level caching, Rust avoids redundant builds and compiles dependencies only once for all crates. Huge time-saver.
+
+3. Scalable architecture
+Whether you're building a CLI, web server, or both, you can keep your business logic in libraries and compose them in different binaries (e.g., cli, web, etc.).
+
+4. Reusability
+You can potentially publish individual crates later or reuse them across other projects by versioning them locally or publishing to crates.io.
+
+5. Better testability
+Each crate can have its own test suite, and you can mock or stub behaviors more easily within a scoped context.
+
