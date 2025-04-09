@@ -1,6 +1,12 @@
 [workspace.lints.rust]
 unsafe_code = "forbid"
 
+[package]
+name = "oxidize-json"
+version = "0.1.0"
+edition = "2021"
+authors = ["dejan"]
+
 [[bin]]
 name = "oxidize-json"
 path = "crates/services/web/src/main.rs"
@@ -18,8 +24,3 @@ members = [
     # -- App tools
     "crates/tools",
 ]
-
-[package]
-name = "oxidize-json"
-version = "0.1.0"
-edition = "2021"
