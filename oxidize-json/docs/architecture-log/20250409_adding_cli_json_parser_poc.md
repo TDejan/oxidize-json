@@ -1,0 +1,3 @@
+- create simple json parser to start with
+- create it inside cli lib
+- separate modules per command

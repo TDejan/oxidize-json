@@ -1,3 +1,4 @@
+# This Cargo.toml represents a virtual manifest for a workspace.
 [workspace.lints.rust]
 unsafe_code = "forbid"
 
@@ -7,20 +8,20 @@ version = "0.1.0"
 edition = "2021"
 authors = ["dejan"]
 
-[[bin]]
-name = "oxidize-json"
-path = "crates/services/web/src/main.rs"
-
 [workspace]
+
 resolver = "2"
 members = [
     # -- App libs
     "crates/libs/auth",
     "crates/libs/core",
-    "crates/libs/auth",
     # -- App services
     "crates/services/cli",
     "crates/services/web",
     # -- App tools
     "crates/tools",
 ]
+
+[[bin]]
+name = "cli"
+path = "crates/services/cli/src/main.rs"
