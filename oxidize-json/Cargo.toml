@@ -2,12 +2,6 @@
 [workspace.lints.rust]
 unsafe_code = "forbid"
 
-[package]
-name = "oxidize-json"
-version = "0.1.0"
-edition = "2021"
-authors = ["dejan"]
-
 [workspace]
 
 resolver = "2"
@@ -21,7 +15,3 @@ members = [
     # -- App tools
     "crates/tools",
 ]
-
-[[bin]]
-name = "cli"
-path = "crates/services/cli/src/main.rs"

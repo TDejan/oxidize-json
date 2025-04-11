@@ -19,21 +19,76 @@ If core dependens on utils, then utils can't depend on core.
 Only one dependency flow
 
 
-oxidize/
-├── Cargo.toml          # Root-level Cargo.toml for the workspace
-├── src/
-│   ├── main.rs         # Starts the CLI app
-│   ├── lib.rs          # Core logic (optional at first)
-│   └── cli/            # CLI arguments and command logic
-│       ├── Cargo.toml  # Cargo.toml for the cli crate
-│       ├── src/        # CLI-specific source folder
-│       │   ├── commands/  # Commands folder inside src/cli
-│       │   │   ├── mod.rs  # Module for commands (imports the specific commands)
-│       │   │   └── read.rs      # "oxidize read ..." command logic
-│       │   └── main.rs       # CLI args + command logic (definition of Cli struct)
-│       │   └── cli.rs
-├── README.md
-└── .gitignore
+│   Cargo.lock
+│   Cargo.toml
+│
+├───.cargo
+├───crates
+│   ├───libs
+│   │   ├───auth
+│   │   │   │   Cargo.toml
+│   │   │   │   README.md
+│   │   │   │
+│   │   │   └───src
+│   │   │           lib.rs
+│   │   │
+│   │   ├───core
+│   │   │   │   Cargo.toml
+│   │   │   │   README.md
+│   │   │   │
+│   │   │   └───src
+│   │   │           lib.rs
+│   │   │
+│   │   └───utilis
+│   │       │   Cargo.toml
+│   │       │   README.md
+│   │       │
+│   │       └───src
+│   │               lib.rs
+│   │
+│   ├───services
+│   │   ├───cli
+│   │   │   │   Cargo.toml
+│   │   │   │   README.md
+│   │   │   │
+│   │   │   └───src
+│   │   │       │   main.rs
+│   │   │       │
+│   │   │       └───commands
+│   │   │               cli.rs
+│   │   │               mod.rs
+│   │   │               read.rs
+│   │   │
+│   │   └───web
+│   │       │   Cargo.toml
+│   │       │   README.md
+│   │       │
+│   │       └───src
+│   │               main.rs
+│   │
+│   └───tools
+│       │   Cargo.toml
+│       │
+│       └───src
+│               lib.rs
+│
+├───docs
+│   └───architecture-log
+│           20250310_initial_project_setup.md
+│           20250314_initial_project_structure.md
+│           20250408_project_structure_initial_dependencies.md
+│           20250409_adding_cli_json_parser_poc.md
+│           20250409_adding_dependencies.md
+│
+└───target
+    │   .rustc_info.json
+    │   CACHEDIR.TAG
+    │
+    └───debug
+        │   .cargo-lock
+        │   cli.d
+        │   cli.exe
+        │   cli.pdb
 
 
 
