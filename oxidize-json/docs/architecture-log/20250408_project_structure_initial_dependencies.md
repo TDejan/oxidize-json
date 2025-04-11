@@ -18,6 +18,80 @@ Only have what's needed for that crate
 If core dependens on utils, then utils can't depend on core.
 Only one dependency flow
 
+
+│   Cargo.lock
+│   Cargo.toml
+│
+├───.cargo
+├───crates
+│   ├───libs
+│   │   ├───auth
+│   │   │   │   Cargo.toml
+│   │   │   │   README.md
+│   │   │   │
+│   │   │   └───src
+│   │   │           lib.rs
+│   │   │
+│   │   ├───core
+│   │   │   │   Cargo.toml
+│   │   │   │   README.md
+│   │   │   │
+│   │   │   └───src
+│   │   │           lib.rs
+│   │   │
+│   │   └───utilis
+│   │       │   Cargo.toml
+│   │       │   README.md
+│   │       │
+│   │       └───src
+│   │               lib.rs
+│   │
+│   ├───services
+│   │   ├───cli
+│   │   │   │   Cargo.toml
+│   │   │   │   README.md
+│   │   │   │
+│   │   │   └───src
+│   │   │       │   main.rs
+│   │   │       │
+│   │   │       └───commands
+│   │   │               cli.rs
+│   │   │               mod.rs
+│   │   │               read.rs
+│   │   │
+│   │   └───web
+│   │       │   Cargo.toml
+│   │       │   README.md
+│   │       │
+│   │       └───src
+│   │               main.rs
+│   │
+│   └───tools
+│       │   Cargo.toml
+│       │
+│       └───src
+│               lib.rs
+│
+├───docs
+│   └───architecture-log
+│           20250310_initial_project_setup.md
+│           20250314_initial_project_structure.md
+│           20250408_project_structure_initial_dependencies.md
+│           20250409_adding_cli_json_parser_poc.md
+│           20250409_adding_dependencies.md
+│
+└───target
+    │   .rustc_info.json
+    │   CACHEDIR.TAG
+    │
+    └───debug
+        │   .cargo-lock
+        │   cli.d
+        │   cli.exe
+        │   cli.pdb
+
+
+
 Benefits
 1. Separation of concerns
 Each lib crate can encapsulate a specific domain or set of functionality (auth, core, etc.), making your codebase easier to reason about, maintain, and test.
@@ -34,3 +108,5 @@ You can potentially publish individual crates later or reuse them across other p
 5. Better testability
 Each crate can have its own test suite, and you can mock or stub behaviors more easily within a scoped context.
 
+By using modules, we can group related definitions together and name why they’re related. Programmers using this code can navigate the code based on the groups rather than having to read through all the definitions, making it easier to find the definitions relevant to them. Programmers adding new functionality to this code would know where to place the code to keep the program organized.
+<see cref="https://doc.rust-lang.org/stable/book/ch07-02-defining-modules-to-control-scope-and-privacy.html"/>
